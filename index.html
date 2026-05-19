@@ -1,0 +1,103 @@
+# 🎮 UGS Games — Free Browser Games
+
+A **CrazyGames-style** arcade website with 6 fully playable browser games. Host for free on GitHub Pages!
+
+## 🕹️ Games Included
+
+| Game | Type | Controls |
+|------|------|----------|
+| 🐍 Neon Snake | Arcade | Arrow keys / WASD |
+| 🧱 Hyper Breakout | Action | Mouse |
+| 🚀 Galaxy Blaster | Shooter | Mouse + Click/Hold |
+| 🐦 Flappy Rocket | Arcade | Click / Tap / Space |
+| 🃏 Memory Blitz | Puzzle | Click cards |
+| ⌨️ Type Racer X | Skill | Keyboard |
+
+## 🚀 How to Host on GitHub Pages (Free!)
+
+### Step 1 — Create a GitHub repo
+1. Go to [github.com](https://github.com) and sign in
+2. Click **New Repository**
+3. Name it `ugs-games` (or anything you like)
+4. Set it to **Public**
+5. Click **Create Repository**
+
+### Step 2 — Upload the files
+**Option A — GitHub website (easiest):**
+1. Open your new repo
+2. Click **Add file → Upload files**
+3. Drag ALL the files/folders from this zip
+4. Click **Commit changes**
+
+**Option B — Git command line:**
+```bash
+git clone https://github.com/YOUR_USERNAME/ugs-games
+cd ugs-games
+# Copy all game files here
+git add .
+git commit -m "Add UGS Games site"
+git push
+```
+
+### Step 3 — Enable GitHub Pages
+1. Go to your repo → **Settings**
+2. Scroll to **Pages** in the left sidebar
+3. Under **Source**, select **Deploy from a branch**
+4. Choose **main** branch, **/ (root)** folder
+5. Click **Save**
+6. Wait ~2 minutes, then visit:
+   ```
+   https://YOUR_USERNAME.github.io/ugs-games/
+   ```
+
+## 📁 File Structure
+
+```
+ugs-games/
+├── index.html          ← Main game hub (homepage)
+├── css/
+│   └── style.css       ← All site styles
+├── js/
+│   └── main.js         ← Site logic + canvas previews
+└── games/
+    ├── snake/index.html
+    ├── breakout/index.html
+    ├── shooter/index.html
+    ├── flappy/index.html
+    ├── memory/index.html
+    └── typing/index.html
+```
+
+## ➕ Adding Your Own Games
+
+1. Create a new folder: `games/mygame/`
+2. Add your `index.html` game file inside it
+3. In `index.html` (homepage), add a card:
+```html
+<div class="game-card" onclick="openGame('games/mygame/index.html')">
+  <div class="card-thumb" style="background:#001a00">
+    <div class="thumb-art">🎯</div>
+    <div class="card-play">▶ PLAY</div>
+  </div>
+  <div class="card-info">
+    <h3>🎯 My Game</h3>
+    <p>Description here</p>
+    <div class="card-meta">
+      <span class="tag">Arcade</span>
+      <span class="stars">★★★★★</span>
+    </div>
+  </div>
+</div>
+```
+
+## 🎨 Customization
+
+- **Site name**: Edit `UGS GAMES` in `index.html` and `css/style.css`
+- **Colors**: Change CSS variables in `:root` inside `css/style.css`
+- **Add games**: Drop any HTML5 game into the `games/` folder
+
+## 📱 Mobile Friendly
+All games support touch controls on mobile devices.
+
+---
+Built with ❤️ using HTML5 Canvas + Vanilla JavaScript. No frameworks, no dependencies.
